@@ -1,0 +1,12 @@
+.wrapper {
+  min-height: 99vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.innerContent {
+  width: 700px;
+}

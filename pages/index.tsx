@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import AutoComplete from "../components/AutoComplete";
 import Button from "../components/Button";
@@ -17,12 +18,17 @@ const Home = () => {
       </div>
 
       <div className={styles.btnWrapper}>
-        <div className={styles.button}>
+        <Link
+          target={"_blank"}
+          className={styles.button}
+          href="https://github.com/shuvamk/regex-for-anything"
+        >
           <Button btnText="STAR ON GITHUB" />
-        </div>
-        <div className={styles.button}>
+        </Link>
+
+        <Link href="/learn" className={styles.button}>
           <Button btnText="LEARN REGEX" />
-        </div>
+        </Link>
       </div>
     </div>
   );
