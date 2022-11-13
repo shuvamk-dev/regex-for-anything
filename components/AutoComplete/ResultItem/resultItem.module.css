@@ -1,0 +1,23 @@
+.resultItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 24px;
+  align-items: center;
+}
+
+.resultItemLeft {
+  max-width: 70%;
+}
+
+.regex {
+  font-size: 12px;
+  color: gray;
+}
+
+.copyToClipboard {
+  cursor: pointer;
+}
+
+.resultItem:hover {
+  background-color: aliceblue;
+}

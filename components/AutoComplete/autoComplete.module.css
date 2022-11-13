@@ -6,7 +6,6 @@
 
 .inputWrapper {
   display: flex;
-
   border: 1px solid rgba(0, 0, 0, 0.07);
   border-radius: 10px;
   background: transparent;
@@ -15,8 +14,8 @@
 
 .textInput {
   text-align: center;
-  padding: 15px 45px 15px 30px;
-  width: 100%;
+  padding: 15px 0px 15px 30px;
+  width: 90%;
   font-size: 24px;
   font-weight: 300;
   border: none;
@@ -36,25 +35,9 @@
   overflow: scroll;
 }
 
-.resultItem {
+.searchIconWrapper {
   display: flex;
-  justify-content: space-between;
-  padding: 15px 24px;
-}
-
-.resultItemLeft {
-  max-width: 70%;
-}
-
-.regex {
-  font-size: 12px;
-  color: gray;
-}
-
-.copyToClipboard {
-  cursor: pointer;
-}
-
-.resultItem:hover {
-  background-color: aliceblue;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
 }

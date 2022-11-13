@@ -1,8 +1,10 @@
+import Image from "next/image";
 import React, { useState } from "react";
 import { REGEX } from "../../data/regex";
 import { RegexQuery } from "../../utils/types";
 import EmptyState from "../EmptyState";
 import styles from "./autoComplete.module.css";
+import ResultItem from "./ResultItem";
 
 const AutoComplete = () => {
   const [results, setResults] = useState<RegexQuery[]>([]);
@@ -20,15 +22,6 @@ const AutoComplete = () => {
     setResults(_results);
   };
 
-  const handleCopyToClipboard = async (item: RegexQuery) => {
-    try {
-      await navigator.clipboard.writeText(item.regex);
-      console.log("Content copied to clipboard", item.regex);
-    } catch (err) {
-      console.error("Failed to copy: ", err);
-    }
-  };
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.inputWrapper}>
@@ -38,23 +31,20 @@ const AutoComplete = () => {
           value={searchInput}
           placeholder="Search here"
         />
+        <div className={styles.searchIconWrapper}>
+          <Image
+            src={require("../../assets/icons/search.svg")}
+            alt="Copy"
+            height={20}
+            className={styles.searchIcon}
+          />
+        </div>
       </div>
       {searchInput.length > 0 && (
         <div className={styles.resultWrapper}>
           {results.length > 0 ? (
             results.map((_result) => (
-              <div key={_result.id} className={styles.resultItem}>
-                <div className={styles.resultItemLeft}>
-                  <div>{_result.query}</div>
-                  <div className={styles.regex}>{_result.regex}</div>
-                </div>
-                <div
-                  onClick={() => handleCopyToClipboard(_result)}
-                  className={styles.copyToClipboard}
-                >
-                  Copy to clipboard
-                </div>
-              </div>
+              <ResultItem result={_result} key={_result.id} />
             ))
           ) : (
             <EmptyState />
