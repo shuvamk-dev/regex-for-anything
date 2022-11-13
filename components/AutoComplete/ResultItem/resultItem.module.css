@@ -12,6 +12,11 @@
 .regex {
   font-size: 12px;
   color: gray;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .copyToClipboard {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { REGEX } from "../../data/regex";
 import { RegexQuery } from "../../utils/types";
 import EmptyState from "../EmptyState";
@@ -9,6 +9,12 @@ import ResultItem from "./ResultItem";
 const AutoComplete = () => {
   const [results, setResults] = useState<RegexQuery[]>([]);
   const [searchInput, setSearchInput] = useState("");
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    inputRef?.current?.focus();
+  }, []);
 
   const handleSearchInputChange = (e: any) => {
     setSearchInput(e.target.value);
@@ -30,6 +36,7 @@ const AutoComplete = () => {
           onChange={handleSearchInputChange}
           value={searchInput}
           placeholder="Search here"
+          ref={inputRef}
         />
         <div className={styles.searchIconWrapper}>
           <Image
