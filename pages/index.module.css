@@ -1,7 +1,15 @@
 .wrapper {
-  min-height: 100vh;
+  min-height: 99vh;
   min-width: 100vw;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.topSection {
+  display: flex;
+  flex: 1 1 auto;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -16,4 +24,14 @@
 .subHeading {
   font-size: 20px;
   margin-bottom: 24px;
+}
+
+.btnWrapper {
+  display: flex;
+  width: 700px;
+  justify-content: space-between;
+}
+
+.button {
+  width: 45%;
 }

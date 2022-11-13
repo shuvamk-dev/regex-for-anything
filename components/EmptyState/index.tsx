@@ -3,6 +3,7 @@ import Lottie from "lottie-react";
 import styles from "./emptyState.module.css";
 
 import EmptyStateLottie from "../../assets/lottie/emptyState.json";
+import Button from "../Button";
 
 const EmptyState = () => {
   return (
@@ -13,7 +14,9 @@ const EmptyState = () => {
         loop={true}
       />
       <div>Oops! Looks like we miss something, add here:</div>
-      <div>GITHUB</div>
+      <div className={styles.button}>
+        <Button btnText="GITHUB" />
+      </div>
     </div>
   );
 };

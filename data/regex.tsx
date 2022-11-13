@@ -91,4 +91,67 @@ export const REGEX: RegexQuery[] = [
     query: "AADHAR NUMBER",
     regex: "^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$",
   },
+  {
+    id: 18,
+    query: "MORSE CODE",
+    regex:
+      "/^[.-]{1,5}(?:[ \t]+[.-]{1,5})*(?:[ \t]+[.-]{1,5}(?:[ \t]+[.-]{1,5})*)*$/",
+  },
+  {
+    id: 19,
+    query: "ALPHANUMERIC WITH SPACE",
+    regex: "/^[a-zA-Z0-9 ]*$/",
+  },
+  {
+    id: 20,
+    query: "UNCOMMON EMAIL",
+    regex: "/^([a-z0-9_.+-]+)@([da-z.-]+).([a-z.]{2,6})$/",
+  },
+  {
+    id: 21,
+    query: "MODERATE PASSWORD",
+    regex: "/(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.{8,}$/",
+  },
+  {
+    id: 22,
+    query: "USERNAME",
+    regex: "/^[a-z0-9_-]{3,16}$/",
+  },
+  {
+    id: 23,
+    query: "HTTPS PROTOCOL",
+    regex:
+      "/https?://(www.)?[-a-zA-Z0-9@:%._+~#=]{2,256}.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#()?&//=]*)/",
+  },
+  {
+    id: 24,
+    query: "HTML TAGS",
+    regex: "/</?[ws]*>|<.+[W]>/",
+  },
+  {
+    id: 25,
+    query: "SLUG",
+    regex: "/^[a-z0-9]+(?:-[a-z0-9]+)*$/",
+  },
+  {
+    id: 26,
+    query: "FILE PATH",
+    regex: "(/)?[a-z0-9 _@-^!#$%&+={}./\\[]]+(.[a-z]+)?$",
+  },
+  {
+    id: 27,
+    query: "US ZIP CODE",
+    regex: "/(^d{5}$)|(^d{5}-d{4}$)/",
+  },
+  {
+    id: 28,
+    query: "REGEX",
+    regex:
+      "/^((?:(?:[^?+*{}()[]\\|]+|\\.|[(?:^?\\.|^[^\\]|[^\\^])(?:[^]\\]+|\\.)*]|((?:?[:=!]|?<[=!]|?>)?(?1)??)|(?(?:R|[+-]?d+)))(?:(?:[?+*]|{d+(?:,d*)?})[?+]?)?||)*)$/",
+  },
+  {
+    id: 29,
+    query: "HEX COLOR VALUE",
+    regex: "/^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/",
+  },
 ];
