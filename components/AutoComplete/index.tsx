@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { REGEX } from "../../data/regex";
 import { RegexQuery } from "../../utils/types";
+import EmptyState from "../EmptyState";
 import styles from "./autoComplete.module.css";
 
 const AutoComplete = () => {
@@ -9,8 +10,12 @@ const AutoComplete = () => {
 
   const handleSearchInputChange = (e: any) => {
     setSearchInput(e.target.value);
+    getFiltredResults(e.target.value);
+  };
+
+  const getFiltredResults = (query: string) => {
     const _results = REGEX.filter((_item) =>
-      _item.query.includes(e.target.value)
+      _item.query.includes(query.toUpperCase())
     );
     setResults(_results);
   };
@@ -34,22 +39,26 @@ const AutoComplete = () => {
           placeholder="Search here"
         />
       </div>
-      {results.length > 0 && (
+      {searchInput.length > 0 && (
         <div className={styles.resultWrapper}>
-          {results.map((_result) => (
-            <div key={_result.id} className={styles.resultItem}>
-              <div className={styles.resultItemLeft}>
-                <div>{_result.query}</div>
-                <div className={styles.regex}>{_result.regex}</div>
+          {results.length > 0 ? (
+            results.map((_result) => (
+              <div key={_result.id} className={styles.resultItem}>
+                <div className={styles.resultItemLeft}>
+                  <div>{_result.query}</div>
+                  <div className={styles.regex}>{_result.regex}</div>
+                </div>
+                <div
+                  onClick={() => handleCopyToClipboard(_result)}
+                  className={styles.copyToClipboard}
+                >
+                  Copy to clipboard
+                </div>
               </div>
-              <div
-                onClick={() => handleCopyToClipboard(_result)}
-                className={styles.copyToClipboard}
-              >
-                Copy to clipboard
-              </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <EmptyState />
+          )}
         </div>
       )}
     </div>

@@ -1,8 +1,19 @@
-.wrapper{
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.wrapper {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: 64px;
+  font-weight: 600;
+  margin-top: -130px;
+}
+
+.subHeading {
+  font-size: 20px;
+  margin-bottom: 24px;
 }
