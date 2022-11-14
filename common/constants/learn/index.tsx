@@ -1,11 +1,11 @@
-export const LESSONS = {
-  1: {
+export const LESSONS = [
+  {
     heading: "Introduction",
   },
-  2: {
+  {
     heading: "Basic Matchers",
   },
-  3: {
+  {
     heading: "Meta Characters",
   },
-};
+];
