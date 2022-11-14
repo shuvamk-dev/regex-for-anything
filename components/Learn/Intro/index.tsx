@@ -8,7 +8,6 @@ import styles from "./intro.module.css";
 const Intro = () => {
   return (
     <div className={styles.intro}>
-      <div className={styles.lessonHeading}>Lesson 1: Introduction</div>
       <div className={styles.introItem}>
         <div>
           <Lottie
@@ -42,11 +41,6 @@ const Intro = () => {
           alt="Example 1"
           className={styles.exampleImage}
         />
-      </div>
-      <div className={styles.buttonWrapper}>
-        <div>
-          <Button btnText="Next: Basic Matchers" />
-        </div>
       </div>
     </div>
   );

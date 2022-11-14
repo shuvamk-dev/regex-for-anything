@@ -1,5 +1,11 @@
 export const LESSONS = {
-  LESSON_1: "LESSON 1: Basic Matchers",
-  LESSON_2: "Meta Characters",
-  LESSON_3: "Shorthand Character Sets",
+  1: {
+    heading: "Introduction",
+  },
+  2: {
+    heading: "Basic Matchers",
+  },
+  3: {
+    heading: "Meta Characters",
+  },
 };

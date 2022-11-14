@@ -8,13 +8,6 @@
   flex: 1 1 auto;
 }
 
-.lessonHeading {
-  width: 100%;
-  font-size: 32px;
-  font-weight: 500;
-  margin-bottom: 24px;
-}
-
 .introItem {
   display: flex;
 }
@@ -35,10 +28,4 @@
   height: auto;
   width: 80%;
   margin-top: 24px;
-}
-
-.buttonWrapper {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
 }
