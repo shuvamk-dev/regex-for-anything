@@ -1,0 +1,44 @@
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 48px;
+  flex-direction: column;
+  font-size: 18px;
+  flex: 1 1 auto;
+}
+
+.lessonHeading {
+  width: 100%;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.introItem {
+  display: flex;
+}
+
+.exampleWrapper {
+  font-size: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 24px 0px;
+}
+
+.exampleImage {
+  height: auto;
+  width: 80%;
+  margin-top: 24px;
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}

@@ -2,11 +2,26 @@
   min-height: 99vh;
   min-width: 100vw;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
 .innerContent {
   width: 700px;
+}
+
+.heading {
+  font-size: 48px;
+  margin-top: 24px;
+}
+
+.headingWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  width: 20%;
 }
