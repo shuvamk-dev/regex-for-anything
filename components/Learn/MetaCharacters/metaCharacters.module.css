@@ -1,0 +1,22 @@
+.topInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+.table {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 12px 6px;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+.tableRow {
+  padding: 12px 0px;
+  margin-bottom: 12px;
+}
+
+.tableData {
+  text-align: center;
+}
