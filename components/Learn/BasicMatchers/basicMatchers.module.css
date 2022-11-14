@@ -27,3 +27,8 @@
   font-style: italic;
   border-radius: 3px;
 }
+
+.lottie {
+  display: flex;
+  justify-content: flex-end;
+}

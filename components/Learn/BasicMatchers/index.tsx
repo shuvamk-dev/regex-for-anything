@@ -1,4 +1,6 @@
+import Lottie from "lottie-react";
 import React from "react";
+import ThinkingLottie from "../../../assets/lottie/think.json";
 
 import styles from "./basicMatchers.module.css";
 
@@ -20,21 +22,30 @@ const BasicMatchers = () => {
         </div>
         <div>Test the regular expression</div>
       </div>
-      <div>
-        The regular expression <span className={styles.emphasis}>123</span>{" "}
-        matches the string <span className={styles.emphasis}>123</span>. The
-        regular expression is matched against an input string by comparing each
-        character in the regular expression to each character in the input
-        string, one after another. Regular expressions are normally
-        case-sensitive so the regular expression{" "}
-        <span className={styles.emphasis}>The</span> would not match{" "}
-        <span className={styles.emphasis}>the</span> string the.
+      <div className={styles.contentSection}>
+        <div>
+          The regular expression <span className={styles.emphasis}>123</span>{" "}
+          matches the string <span className={styles.emphasis}>123</span>. The
+          regular expression is matched against an input string by comparing
+          each character in the regular expression to each character in the
+          input string, one after another. Regular expressions are normally
+          case-sensitive so the regular expression{" "}
+          <span className={styles.emphasis}>The</span> would not match{" "}
+          <span className={styles.emphasis}>the</span> string the.
+        </div>
+        <div className={styles.example}>
+          &quot;The&quot; =&gt; <span className={styles.match}>The</span> fat
+          cat sat on the mat.
+        </div>
+        <div>Test the regular expression</div>
       </div>
-      <div className={styles.example}>
-        &quot;The&quot; =&gt; <span className={styles.match}>The</span> fat cat
-        sat on the mat.
+      <div className={styles.lottie}>
+        <Lottie
+          animationData={ThinkingLottie}
+          loop={true}
+          style={{ height: "240px", width: "240px" }}
+        />
       </div>
-      <div>Test the regular expression</div>
     </div>
   );
 };
