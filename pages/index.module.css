@@ -19,6 +19,7 @@
   font-size: 64px;
   font-weight: 600;
   margin-top: -130px;
+  position: relative;
 }
 
 .subHeading {
@@ -34,4 +35,10 @@
 
 .button {
   width: 45%;
+}
+
+.lottie {
+  position: absolute;
+  top: 0;
+  transform: translateY(-70%);
 }
