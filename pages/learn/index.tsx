@@ -41,39 +41,39 @@ const Learn = () => {
     <div className={styles.wrapper}>
       <div className={styles.innerContent}>
         <div className={styles.headingWrapper}>
-          <div className={styles.heading}>LEARN REGEX</div>
-          <Link href="/learn/cheatsheet" className={styles.button}>
-            <Button btnText="CHEATSHEET" />
-          </Link>
-        </div>
-        <div className={styles.lessonWrapper}>
+          <div className={styles.headingInner}>
+            <div className={styles.heading}>LEARN REGEX</div>
+            <Link href="/learn/cheatsheet" className={styles.button}>
+              <Button btnText="CHEATSHEET" />
+            </Link>
+          </div>
           <div className={styles.lessonHeading}>
             Lesson {currentLesson}: {LESSONS[currentLesson - 1]?.heading}
           </div>
+        </div>
+        <div className={styles.lessonWrapper}>
           <div className={styles.lessonContent}>{getCurrentLesson()}</div>
-          <div className={styles.buttonWrapper}>
-            <div
-              className={`${
-                currentLesson === 1 ? styles.hidden : styles.visible
-              }`}
-            >
-              <Button
-                btnText={`Prev: ${LESSONS[currentLesson - 2]?.heading}`}
-                onClick={showPreviousLesson}
-              />
-            </div>
-            <div
-              className={`${
-                currentLesson === LESSONS.length
-                  ? styles.hidden
-                  : styles.visible
-              }`}
-            >
-              <Button
-                btnText={`Next: ${LESSONS[currentLesson]?.heading}`}
-                onClick={showNextLesson}
-              />
-            </div>
+        </div>
+        <div className={styles.buttonWrapper}>
+          <div
+            className={`${
+              currentLesson === 1 ? styles.hidden : styles.visible
+            }`}
+          >
+            <Button
+              btnText={`Prev: ${LESSONS[currentLesson - 2]?.heading}`}
+              onClick={showPreviousLesson}
+            />
+          </div>
+          <div
+            className={`${
+              currentLesson === LESSONS.length ? styles.hidden : styles.visible
+            }`}
+          >
+            <Button
+              btnText={`Next: ${LESSONS[currentLesson]?.heading}`}
+              onClick={showNextLesson}
+            />
           </div>
         </div>
       </div>
