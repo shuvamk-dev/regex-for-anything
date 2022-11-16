@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { LESSONS } from "../../common/constants/learn";
 import Button from "../../components/Button";
 import BasicMatchers from "../../components/Learn/BasicMatchers";
+import CharacterSets from "../../components/Learn/CharacterSets";
 import Intro from "../../components/Learn/Intro";
 import MetaCharacters from "../../components/Learn/MetaCharacters";
 import TheFullStop from "../../components/Learn/TheFullStop";
@@ -23,6 +24,8 @@ const Learn = () => {
         return <MetaCharacters />;
       case 4:
         return <TheFullStop />;
+      case 5:
+        return <CharacterSets />;
     }
   };
 

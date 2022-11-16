@@ -35,4 +35,20 @@ export const LESSONS = [
   {
     heading: "Shorthand Character Sets",
   },
+  {
+    heading: "Lookarounds",
+  },
+
+  {
+    heading: "Lookarounds Explained",
+  },
+  {
+    heading: "Flags",
+  },
+  {
+    heading: "Flags Explained",
+  },
+  {
+    heading: "Greedy vs Lazy Matching",
+  },
 ];
