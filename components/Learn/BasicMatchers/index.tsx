@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import React from "react";
-import ThinkingLottie from "../../../assets/lottie/think.json";
+import { Lesson2Lottie } from "../../../assets/lottie/lottie";
 
 import styles from "./basicMatchers.module.css";
 
@@ -41,7 +41,7 @@ const BasicMatchers = () => {
       </div>
       <div className={styles.lottie}>
         <Lottie
-          animationData={ThinkingLottie}
+          animationData={Lesson2Lottie}
           loop={true}
           style={{ height: "240px", width: "240px" }}
         />

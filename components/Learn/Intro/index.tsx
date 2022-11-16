@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import Image from "next/image";
 import React from "react";
-import ChillLottie from "../../../assets/lottie/chill.json";
+import { Lesson1Lottie } from "../../../assets/lottie/lottie";
 import Button from "../../Button";
 import styles from "./intro.module.css";
 
@@ -11,7 +11,7 @@ const Intro = () => {
       <div className={styles.introItem}>
         <div>
           <Lottie
-            animationData={ChillLottie}
+            animationData={Lesson1Lottie}
             style={{ height: "160px", width: "160px" }}
             loop={true}
           />

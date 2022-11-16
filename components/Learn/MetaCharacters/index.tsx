@@ -2,8 +2,7 @@ import React from "react";
 import Lottie from "lottie-react";
 
 import styles from "./metaCharacters.module.css";
-
-import CalmLottie from "../../../assets/lottie/calm.json";
+import { Lesson3Lottie } from "../../../assets/lottie/lottie";
 
 const META_CHARACTERS: { char: string; description: string }[] = [
   {
@@ -74,7 +73,7 @@ const MetaCharacters = () => {
         </div>
         <div>
           <Lottie
-            animationData={CalmLottie}
+            animationData={Lesson3Lottie}
             style={{ height: "180px", width: "200px" }}
             loop={true}
           />

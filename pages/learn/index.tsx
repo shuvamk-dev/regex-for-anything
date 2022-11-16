@@ -6,6 +6,7 @@ import Button from "../../components/Button";
 import BasicMatchers from "../../components/Learn/BasicMatchers";
 import Intro from "../../components/Learn/Intro";
 import MetaCharacters from "../../components/Learn/MetaCharacters";
+import TheFullStop from "../../components/Learn/TheFullStop";
 
 import styles from "./learn.module.css";
 
@@ -20,6 +21,8 @@ const Learn = () => {
         return <BasicMatchers />;
       case 3:
         return <MetaCharacters />;
+      case 4:
+        return <TheFullStop />;
     }
   };
 
