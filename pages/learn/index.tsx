@@ -7,6 +7,7 @@ import BasicMatchers from "../../components/Learn/BasicMatchers";
 import CharacterSets from "../../components/Learn/CharacterSets";
 import Intro from "../../components/Learn/Intro";
 import MetaCharacters from "../../components/Learn/MetaCharacters";
+import Repetitions from "../../components/Learn/Repetitions";
 import TheFullStop from "../../components/Learn/TheFullStop";
 
 import styles from "./learn.module.css";
@@ -26,6 +27,8 @@ const Learn = () => {
         return <TheFullStop />;
       case 5:
         return <CharacterSets />;
+      case 6:
+        return <Repetitions />;
     }
   };
 
@@ -65,16 +68,18 @@ const Learn = () => {
               onClick={showPreviousLesson}
             />
           </div>
-          <div
-            className={`${
-              currentLesson === LESSONS.length ? styles.hidden : styles.visible
-            }`}
-          >
-            <Button
-              btnText={`Next: ${LESSONS[currentLesson]?.heading}`}
-              onClick={showNextLesson}
-            />
-          </div>
+          {currentLesson === LESSONS.length ? (
+            <div>
+              <Button btnText={`Star on Github`} onClick={showNextLesson} />
+            </div>
+          ) : (
+            <div>
+              <Button
+                btnText={`Next: ${LESSONS[currentLesson]?.heading}`}
+                onClick={showNextLesson}
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>
