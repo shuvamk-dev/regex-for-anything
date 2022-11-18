@@ -1,0 +1,12 @@
+.wrapper {
+  width: 700px;
+  margin: auto;
+}
+
+.inputWrapper {
+  display: flex;
+}
+
+.match {
+  background-color: blue;
+}
