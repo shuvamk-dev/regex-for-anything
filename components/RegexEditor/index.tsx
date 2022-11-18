@@ -47,7 +47,7 @@ const RegexGround = () => {
   const [state, setState] = useState({
     regex: "",
     flags: "",
-    editorState: EditorState.createEmpty(),
+    editorState: EditorState.createWithContent(initState),
   });
 
   const [initial, setInitial] = useState({
