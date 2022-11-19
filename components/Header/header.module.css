@@ -1,0 +1,9 @@
+.wrapper {
+  box-shadow: var(--box-shadow-1);
+  padding: 1rem;
+}
+
+.menuItem {
+  margin-right: 16px;
+  cursor: pointer;
+}

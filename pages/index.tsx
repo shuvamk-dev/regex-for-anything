@@ -10,7 +10,7 @@ import styles from "./index.module.css";
 
 const Home = () => {
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} bg-red`}>
       <div className={styles.topSection}>
         <div className={styles.heading}>
           <Lottie

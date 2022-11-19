@@ -20,6 +20,7 @@
   font-weight: 600;
   margin-top: -130px;
   position: relative;
+  color: var(--bg-red);
 }
 
 .subHeading {

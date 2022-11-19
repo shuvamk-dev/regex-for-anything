@@ -1,0 +1,20 @@
+@import url("./typography/typography.css");
+
+.max-width {
+  max-width: 60%;
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.valign {
+  display: flex;
+  align-items: center;
+}
