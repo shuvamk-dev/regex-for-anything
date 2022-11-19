@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import {
   cheatsheetIcon,
@@ -14,16 +15,19 @@ const MENU_ITEMS = [
     id: 1,
     label: "Learn",
     icon: learnIcon,
+    to: "/learn",
   },
   {
     id: 2,
     label: "Test",
     icon: testIcon,
+    to: "/regex-text",
   },
   {
     id: 3,
     label: "Cheatsheet",
     icon: cheatsheetIcon,
+    to: "/cheatsheet",
   },
 ];
 
@@ -32,7 +36,9 @@ const Header = () => {
   return (
     <div className={`${styles.wrapper}`}>
       <div className={`max-width valign flex-between`}>
-        <div className={`fs-24`}>RegEx.</div>
+        <Link href="/">
+          <div className={`fs-24`}>RegEx.</div>
+        </Link>
         <div className={`valign`}>
           <div className={`valign`}>
             {MENU_ITEMS.map((_item) => (

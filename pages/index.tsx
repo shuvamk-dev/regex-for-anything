@@ -28,20 +28,6 @@ const Home = () => {
 
         <AutoComplete />
       </div>
-
-      <div className={styles.btnWrapper}>
-        <Link
-          target={"_blank"}
-          className={styles.button}
-          href="https://github.com/shuvamk/regex-for-anything"
-        >
-          <Button btnText="STAR ON GITHUB" />
-        </Link>
-
-        <Link href="/learn" className={styles.button}>
-          <Button btnText="LEARN REGEX" />
-        </Link>
-      </div>
     </div>
   );
 };

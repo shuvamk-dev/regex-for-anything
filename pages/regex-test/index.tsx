@@ -1,7 +1,7 @@
 import React from "react";
 import RegexEditor from "../../components/RegexEditor";
 
-const RegexGround = () => {
+const RegexTest = () => {
   return (
     <div>
       RegexGround
@@ -10,4 +10,4 @@ const RegexGround = () => {
   );
 };
 
-export default RegexGround;
+export default RegexTest;
