@@ -13,3 +13,7 @@
   border: 1px solid var(--purple-6);
   color: var(--purple-6);
 }
+
+.btnText {
+  margin: 0px 4px;
+}

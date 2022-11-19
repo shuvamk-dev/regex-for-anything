@@ -45,7 +45,12 @@ const Header = () => {
               <MenuItem item={_item} key={_item.id} />
             ))}
           </div>
-          <Button type="PRIMARY" btnText="Star" iconPathLeft={starIcon} />
+          <Button
+            type="PRIMARY"
+            btnText="Star"
+            iconPathLeft={starIcon}
+            iconSize={18}
+          />
         </div>
       </div>
     </div>

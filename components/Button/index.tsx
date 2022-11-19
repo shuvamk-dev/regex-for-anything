@@ -4,7 +4,8 @@ import React from "react";
 import styles from "./button.module.css";
 
 const Button = (props: any) => {
-  const { btnText, onClick, iconPathLeft, type, iconPathRight } = props;
+  const { btnText, onClick, iconPathLeft, type, iconPathRight, iconSize } =
+    props;
 
   const getClassName = () => {
     switch (type) {
@@ -17,8 +18,15 @@ const Button = (props: any) => {
 
   return (
     <div onClick={onClick} className={getClassName()}>
-      {iconPathLeft && <Image src={iconPathLeft} alt={btnText} />}
-      <div>{btnText}</div>
+      {iconPathLeft && (
+        <Image
+          src={iconPathLeft}
+          alt={btnText}
+          height={iconSize}
+          width={iconSize}
+        />
+      )}
+      <div className={styles.btnText}>{btnText}</div>
       {iconPathRight && <Image src={iconPathRight} alt={btnText} />}
     </div>
   );
