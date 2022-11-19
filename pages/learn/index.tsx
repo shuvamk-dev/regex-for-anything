@@ -44,12 +44,6 @@ const Learn = () => {
     <div className={styles.wrapper}>
       <div className={styles.innerContent}>
         <div className={styles.headingWrapper}>
-          <div className={styles.headingInner}>
-            <div className={styles.heading}>LEARN REGEX</div>
-            <Link href="/learn/cheatsheet" className={styles.button}>
-              <Button btnText="CHEATSHEET" />
-            </Link>
-          </div>
           <div className={styles.lessonHeading}>
             Lesson {currentLesson}: {LESSONS[currentLesson - 1]?.heading}
           </div>

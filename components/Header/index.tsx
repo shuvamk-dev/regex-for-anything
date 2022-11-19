@@ -21,7 +21,7 @@ const MENU_ITEMS = [
     id: 2,
     label: "Test",
     icon: testIcon,
-    to: "/regex-text",
+    to: "/regex-test",
   },
   {
     id: 3,

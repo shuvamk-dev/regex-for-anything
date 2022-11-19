@@ -1,5 +1,5 @@
 export const setCaretPosition = (
-  inputEl: HTMLInputElement,
+  inputEl: HTMLInputElement | null,
   pos: number
 ): void => {
   if (!inputEl || !inputEl.setSelectionRange) return;

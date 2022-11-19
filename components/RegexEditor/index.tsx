@@ -42,7 +42,7 @@ const RegexEditor = () => {
 
   const editor = useRef(null);
 
-  const handleRegexInput = (e) => {
+  const handleRegexInput = (e: any) => {
     const regex = e?.currentTarget?.value || "";
     setState({
       ...state,
@@ -84,7 +84,7 @@ const RegexEditor = () => {
 
       if (regex && matches.length) {
         matches.forEach((match) =>
-          callback(match.index, match.index + match[0].length)
+          callback(match?.index, match?.index! + match[0].length)
         );
       }
 
