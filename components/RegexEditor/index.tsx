@@ -1,62 +1,45 @@
+import "draft-js/dist/Draft.css";
+import React, { useEffect, useRef, useState } from "react";
 import {
   CompositeDecorator,
   ContentBlock,
   ContentState,
-  convertFromRaw,
   Editor,
   EditorState,
 } from "draft-js";
-import cx from "clsx";
 
-import React, { useRef, useState } from "react";
-import "draft-js/dist/Draft.css";
-
+import { setCaretPosition } from "../../utils/funcs";
+import MatchedText from "./MatchedText";
 import styles from "./regexEditor.module.css";
 
 const TEXT = "My name is Shuvamk ";
 
 const initialContent = ContentState.createFromText(TEXT);
-const HandleSpan = (
-  props: JSX.IntrinsicAttributes &
-    React.ClassAttributes<HTMLSpanElement> &
-    React.HTMLAttributes<HTMLSpanElement>
-) => {
-  return (
-    <span {...props} className={styles.match}>
-      {props.children}
-    </span>
-  );
-};
 
-const initState = convertFromRaw({
-  entityMap: {},
-  blocks: [
-    {
-      text: TEXT,
-      type: "unstyled",
-      entityRanges: [],
-    },
-  ],
-});
-
-const Highlight = ({ children }) => (
-  <span className={styles.match}>{children}</span>
-);
-
-const RegexGround = () => {
+const RegexEditor = () => {
   const [state, setState] = useState({
     regex: "",
     flags: "",
-    editorState: EditorState.createWithContent(initState),
+    editorState: EditorState.createEmpty(),
   });
 
-  const [initial, setInitial] = useState({
-    regex: state.regex,
-    flags: state.flags,
-    text: state.editorState?.getCurrentContent()?.getPlainText() || "",
-  });
+  useEffect(() => {
+    const regex = "[A-Z]\\w+";
+    const flags = "g";
+    setState({
+      regex,
+      flags,
+      editorState: checkRegex(
+        regex,
+        EditorState.createWithContent(initialContent)
+      ),
+    });
 
-  const [regexInput, setRegexInput] = useState("");
+    setCaretPosition(regexInput?.current, state.regex.length);
+  }, []);
+
+  const regexInput = useRef<HTMLInputElement>(null);
+
   const editor = useRef(null);
 
   const handleRegexInput = (e) => {
@@ -121,7 +104,7 @@ const RegexGround = () => {
     const HighlightDecorator = new CompositeDecorator([
       {
         strategy: handleStrategy,
-        component: Highlight,
+        component: MatchedText,
       },
     ]);
 
@@ -136,25 +119,27 @@ const RegexGround = () => {
   };
 
   return (
-    <div>
-      <input
-        value={state.regex}
-        spellCheck={false}
-        onInput={handleRegexInput}
-      />
-      <div onClick={() => editor.current.focus()}>
-        <div>
-          <div>
-            <Editor
-              ref={editor}
-              editorState={state.editorState}
-              onChange={onChangeContent}
-            />
-          </div>
-        </div>
+    <div className={styles.wrapper}>
+      <div className={styles.textInputWrapper}>
+        <div>/</div>
+        <input
+          value={state.regex}
+          spellCheck={false}
+          onInput={handleRegexInput}
+          className={styles.textInput}
+          ref={regexInput}
+        />
+        <div>/g</div>
+      </div>
+      <div className={styles.textWrapper}>
+        <Editor
+          ref={editor}
+          editorState={state.editorState}
+          onChange={onChangeContent}
+        />
       </div>
     </div>
   );
 };
 
-export default RegexGround;
+export default RegexEditor;

@@ -1,12 +1,36 @@
 .wrapper {
-  width: 700px;
-  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.textInputWrapper {
+  display: flex;
+  width: 100%;
+  margin-bottom: 24px;
+  border: 1px solid black;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+.textInput {
+  display: flex;
+  flex: 1;
+  font-size: 18px;
+  outline: none;
+  border: none;
 }
 
 .inputWrapper {
   display: flex;
 }
 
+.textWrapper {
+  padding: 12px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
 .match {
-  background-color: blue;
+  color: blue;
 }

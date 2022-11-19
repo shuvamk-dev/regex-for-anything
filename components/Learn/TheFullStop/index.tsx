@@ -23,6 +23,7 @@ const TheFullStop = () => {
         </div>
         <div>Test the regular expression</div>
       </div>
+
       <div>
         <Lottie
           animationData={Lesson4Lottie}
