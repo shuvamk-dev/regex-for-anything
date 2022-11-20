@@ -76,7 +76,7 @@
 .rightWrapper {
   margin-top: 24px;
   position: sticky;
-  top: 24px;
+  top: 110px;
   text-align: right;
   display: flex;
   flex-direction: column;

@@ -1,6 +1,9 @@
 .wrapper {
   box-shadow: var(--box-shadow-1);
   padding: 1rem 0rem;
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 
 .menuItem {
