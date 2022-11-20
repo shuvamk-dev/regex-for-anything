@@ -20,15 +20,15 @@ const TEXT = "My name is Shuvamk ";
 const initialContent = ContentState.createFromText(TEXT);
 
 const RegexEditor = () => {
-  const [state, setState] = useState({
+  const [state, setState] = useState<State>({
     regex: "",
-    flags: "",
+    flags: [],
     editorState: EditorState.createEmpty(),
   });
 
   useEffect(() => {
     const regex = "[A-Z]\\w+";
-    const flags = "g";
+    const flags = ["g"];
     setState({
       regex,
       flags,
@@ -125,6 +125,22 @@ const RegexEditor = () => {
     copyToClipboard(state.regex);
   };
 
+  const handleFlagSelection = (flag: string) => {
+    if (state.flags.indexOf(flag) > -1) {
+      setState({
+        ...state,
+        flags: state.flags.filter((_flag) => _flag !== flag),
+      });
+    } else {
+      setState({
+        ...state,
+        flags: [...state.flags, flag],
+      });
+    }
+
+    console.log("hererere", [...state.flags, flag]);
+  };
+
   return (
     <div className={styles.wrapper}>
       <div className={`flex`}>
@@ -137,7 +153,12 @@ const RegexEditor = () => {
             className={styles.textInput}
             ref={regexInput}
           />
-          <div>/g</div>
+          <div>/</div>
+          <div>
+            {state.flags.map((flag) => (
+              <span key={flag}>{flag}</span>
+            ))}
+          </div>
         </div>
         <div
           className={`${styles.copyWrapper} absolute-center`}
@@ -145,10 +166,18 @@ const RegexEditor = () => {
         >
           <Image src={copyIcon} alt="copy" height={16} />
         </div>
-        <Flags />
+        <Flags flags={state.flags} handleFlagSelection={handleFlagSelection} />
       </div>
 
-      <div className={`${styles.textWrapper}`}>
+      <div
+        className={`${styles.textWrapper}`}
+        onClick={() =>
+          setState({
+            ...state,
+            editorState: EditorState.moveFocusToEnd(state.editorState),
+          })
+        }
+      >
         <Editor
           ref={editor}
           editorState={state.editorState}
@@ -157,6 +186,12 @@ const RegexEditor = () => {
       </div>
     </div>
   );
+};
+
+type State = {
+  regex: string;
+  flags: string[];
+  editorState: EditorState;
 };
 
 export default RegexEditor;

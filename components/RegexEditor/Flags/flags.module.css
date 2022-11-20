@@ -6,4 +6,26 @@
   height: max-content;
   margin-left: 4px;
   cursor: pointer;
+  position: relative;
+}
+
+.optionsWrapper {
+  position: absolute;
+  background-color: white;
+  border: 1px solid var(--purple-1);
+  border-radius: 10px;
+  padding: 1rem;
+  bottom: 0;
+  right: 0;
+  transform: translateY(100%);
+  box-shadow: var(--box-shadow-3);
+  width: 186px;
+}
+
+.option {
+  margin: 6px 0px;
+}
+
+.label {
+  margin-left: 4px;
 }
