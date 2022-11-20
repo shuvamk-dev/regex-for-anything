@@ -1,19 +1,12 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
+import { copyToClipboard } from "../../../utils/funcs";
 import { RegexQuery } from "../../../utils/types";
 
 import styles from "./resultItem.module.css";
 
 const ResultItem = (props: { result: RegexQuery }) => {
   const { result } = props;
-
-  const handleCopyToClipboard = async (item: RegexQuery) => {
-    try {
-      await navigator.clipboard.writeText(item.regex);
-    } catch (err) {
-      console.error("Failed to copy: ", err);
-    }
-  };
 
   return (
     <div key={result.id} className={styles.resultItem}>
@@ -22,7 +15,7 @@ const ResultItem = (props: { result: RegexQuery }) => {
         <div className={styles.regex}>{result.regex}</div>
       </div>
       <div
-        onClick={() => handleCopyToClipboard(result)}
+        onClick={() => copyToClipboard(result.regex)}
         className={styles.copyToClipboard}
       >
         <Image

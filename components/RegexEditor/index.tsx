@@ -8,9 +8,12 @@ import {
   EditorState,
 } from "draft-js";
 
-import { setCaretPosition } from "../../utils/funcs";
+import { copyToClipboard, setCaretPosition } from "../../utils/funcs";
 import MatchedText from "./MatchedText";
 import styles from "./regexEditor.module.css";
+import Image from "next/image";
+import { copyIcon } from "../../assets/icons/icons";
+import Flags from "./Flags";
 
 const TEXT = "My name is Shuvamk ";
 
@@ -118,20 +121,34 @@ const RegexEditor = () => {
     setState({ ...state, editorState });
   };
 
+  const handleCopyToClipboard = () => {
+    copyToClipboard(state.regex);
+  };
+
   return (
     <div className={styles.wrapper}>
-      <div className={styles.textInputWrapper}>
-        <div>/</div>
-        <input
-          value={state.regex}
-          spellCheck={false}
-          onInput={handleRegexInput}
-          className={styles.textInput}
-          ref={regexInput}
-        />
-        <div>/g</div>
+      <div className={`flex`}>
+        <div className={styles.textInputWrapper}>
+          <div>/</div>
+          <input
+            value={state.regex}
+            spellCheck={false}
+            onInput={handleRegexInput}
+            className={styles.textInput}
+            ref={regexInput}
+          />
+          <div>/g</div>
+        </div>
+        <div
+          className={`${styles.copyWrapper} absolute-center`}
+          onClick={handleCopyToClipboard}
+        >
+          <Image src={copyIcon} alt="copy" height={16} />
+        </div>
+        <Flags />
       </div>
-      <div className={styles.textWrapper}>
+
+      <div className={`${styles.textWrapper}`}>
         <Editor
           ref={editor}
           editorState={state.editorState}

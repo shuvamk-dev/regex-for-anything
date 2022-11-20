@@ -1,0 +1,9 @@
+.wrapper {
+  border: 2px solid var(--purple-0-5);
+  padding: 10px;
+  border-radius: 8px;
+  width: max-content;
+  height: max-content;
+  margin-left: 4px;
+  cursor: pointer;
+}

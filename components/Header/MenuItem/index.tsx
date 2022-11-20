@@ -13,7 +13,7 @@ const MenuItem = (props: Props) => {
     <Link href={to}>
       <div className={`valign  ${styles.menuItem}`}>
         <Image src={icon} alt={label} />
-        <span>{label}</span>
+        <span className={`only-mobile`}>{label}</span>
       </div>
     </Link>
   );

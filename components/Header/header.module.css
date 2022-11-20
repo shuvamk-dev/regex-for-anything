@@ -1,6 +1,6 @@
 .wrapper {
   box-shadow: var(--box-shadow-1);
-  padding: 1rem;
+  padding: 1rem 0rem;
 }
 
 .menuItem {
