@@ -3,7 +3,7 @@ export const LESSONS = [
     heading: "Introduction",
   },
   {
-    heading: "Basic Matchers",
+    heading: "Basic 101",
   },
   {
     heading: "Meta Characters",

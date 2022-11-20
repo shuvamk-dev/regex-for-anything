@@ -10,6 +10,7 @@ import MetaCharacters from "../../components/Learn/MetaCharacters";
 import Repetitions from "../../components/Learn/Repetitions";
 import TheFullStop from "../../components/Learn/TheFullStop";
 import TwoColLayout from "../../components/TwoColLayout";
+import { LESSON_HEADINGS } from "../../data/lessons";
 
 import styles from "./learn.module.css";
 
@@ -50,6 +51,7 @@ const Learn = () => {
               Lesson {currentLesson}: {LESSONS[currentLesson - 1]?.heading}
             </div>
           </div>
+
           <div className={styles.lessonWrapper}>
             <div className={styles.lessonContent}>{getCurrentLesson()}</div>
           </div>
@@ -82,7 +84,33 @@ const Learn = () => {
     );
   };
 
-  return <TwoColLayout leftContent={getLeftContent()} />;
+  const getRightContent = () => {
+    return (
+      <div className={styles.rightWrapper}>
+        <div>
+          {LESSON_HEADINGS.map((lesson) => (
+            <div
+              key={lesson}
+              className={`${
+                lesson === LESSONS[currentLesson - 1].heading
+                  ? styles.activeLesson
+                  : styles.lessonName
+              }`}
+            >
+              {lesson}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <TwoColLayout
+      leftContent={getLeftContent()}
+      rightContent={getRightContent()}
+    />
+  );
 };
 
 export default Learn;
