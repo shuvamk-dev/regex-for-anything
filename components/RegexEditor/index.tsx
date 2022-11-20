@@ -171,12 +171,7 @@ const RegexEditor = () => {
 
       <div
         className={`${styles.textWrapper}`}
-        onClick={() =>
-          setState({
-            ...state,
-            editorState: EditorState.moveSelectionToEnd(state.editorState),
-          })
-        }
+        onClick={() => editor?.current.focus()}
       >
         <Editor
           ref={editor}
