@@ -1,6 +1,7 @@
 .wrapper {
   position: relative;
-  width: 700px;
+  max-width: 720px;
+  width: 90%;
 }
 
 .inputWrapper {

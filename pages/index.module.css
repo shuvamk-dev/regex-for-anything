@@ -1,10 +1,10 @@
 .wrapper {
   min-height: 90vh;
-  min-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 
 .topSection {
@@ -13,6 +13,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 
 .heading {

@@ -9,6 +9,7 @@ import Intro from "../../components/Learn/Intro";
 import MetaCharacters from "../../components/Learn/MetaCharacters";
 import Repetitions from "../../components/Learn/Repetitions";
 import TheFullStop from "../../components/Learn/TheFullStop";
+import TwoColLayout from "../../components/TwoColLayout";
 
 import styles from "./learn.module.css";
 
@@ -40,44 +41,48 @@ const Learn = () => {
     setCurrentLesson(currentLesson - 1);
   };
 
-  return (
-    <div className={styles.wrapper}>
-      <div className={styles.innerContent}>
-        <div className={styles.headingWrapper}>
-          <div className={styles.lessonHeading}>
-            Lesson {currentLesson}: {LESSONS[currentLesson - 1]?.heading}
-          </div>
-        </div>
-        <div className={styles.lessonWrapper}>
-          <div className={styles.lessonContent}>{getCurrentLesson()}</div>
-        </div>
-        <div className={styles.buttonWrapper}>
-          <div
-            className={`${
-              currentLesson === 1 ? styles.hidden : styles.visible
-            }`}
-          >
-            <Button
-              btnText={`Prev: ${LESSONS[currentLesson - 2]?.heading}`}
-              onClick={showPreviousLesson}
-            />
-          </div>
-          {currentLesson === LESSONS.length ? (
-            <div>
-              <Button btnText={`Star on Github`} onClick={showNextLesson} />
+  const getLeftContent = () => {
+    return (
+      <div className={styles.wrapper}>
+        <div className={styles.innerContent}>
+          <div className={styles.headingWrapper}>
+            <div className={styles.lessonHeading}>
+              Lesson {currentLesson}: {LESSONS[currentLesson - 1]?.heading}
             </div>
-          ) : (
-            <div>
+          </div>
+          <div className={styles.lessonWrapper}>
+            <div className={styles.lessonContent}>{getCurrentLesson()}</div>
+          </div>
+          <div className={styles.buttonWrapper}>
+            <div
+              className={`${
+                currentLesson === 1 ? styles.hidden : styles.visible
+              }`}
+            >
               <Button
-                btnText={`Next: ${LESSONS[currentLesson]?.heading}`}
-                onClick={showNextLesson}
+                btnText={`Prev: ${LESSONS[currentLesson - 2]?.heading}`}
+                onClick={showPreviousLesson}
               />
             </div>
-          )}
+            {currentLesson === LESSONS.length ? (
+              <div>
+                <Button btnText={`Star on Github`} onClick={showNextLesson} />
+              </div>
+            ) : (
+              <div>
+                <Button
+                  btnText={`Next: ${LESSONS[currentLesson]?.heading}`}
+                  onClick={showNextLesson}
+                />
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
+
+  return <TwoColLayout leftContent={getLeftContent()} />;
 };
 
 export default Learn;

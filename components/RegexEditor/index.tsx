@@ -174,7 +174,7 @@ const RegexEditor = () => {
         onClick={() =>
           setState({
             ...state,
-            editorState: EditorState.moveFocusToEnd(state.editorState),
+            editorState: EditorState.moveSelectionToEnd(state.editorState),
           })
         }
       >

@@ -1,6 +1,5 @@
 .wrapper {
   height: 100vh;
-  min-width: 100vw;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -8,7 +7,6 @@
 
 .innerContent {
   display: flex;
-  width: 700px;
   height: 100vh;
   flex: 1 1 0;
   flex-direction: column;

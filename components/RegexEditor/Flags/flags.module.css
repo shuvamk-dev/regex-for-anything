@@ -20,6 +20,7 @@
   transform: translateY(100%);
   box-shadow: var(--box-shadow-3);
   width: 186px;
+  z-index: 99;
 }
 
 .option {
