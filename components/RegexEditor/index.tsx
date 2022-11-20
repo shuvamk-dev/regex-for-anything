@@ -43,7 +43,7 @@ const RegexEditor = () => {
 
   const regexInput = useRef<HTMLInputElement>(null);
 
-  const editor = useRef(null);
+  const editor = useRef<any>(null);
 
   const handleRegexInput = (e: any) => {
     const regex = e?.currentTarget?.value || "";
