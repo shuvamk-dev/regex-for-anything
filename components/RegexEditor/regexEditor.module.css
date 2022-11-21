@@ -14,6 +14,7 @@
   border: 2px solid var(--purple-1-5);
   padding: 6px;
   border-radius: 10px;
+  font-size: 18px;
 }
 
 .textInput {
@@ -22,6 +23,8 @@
   font-size: 18px;
   outline: none;
   border: none;
+  background-color: transparent;
+  padding: 6px 0px;
 }
 
 .inputWrapper {

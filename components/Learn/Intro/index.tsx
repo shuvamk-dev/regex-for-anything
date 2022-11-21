@@ -33,7 +33,12 @@ const Introduction = () => {
           Enter Begin in this editor to start your quest.
         </div>
         <div>
-          <RegexEditor />
+          <RegexEditor
+            textEditable={false}
+            regexEditable={true}
+            hideCopyOptions={true}
+            hideFlagOptions={true}
+          />
         </div>
       </div>
     </div>

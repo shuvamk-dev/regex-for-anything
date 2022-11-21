@@ -19,12 +19,16 @@ const TEXT = "My name is Shuvamk ";
 
 const initialContent = ContentState.createFromText(TEXT);
 
-const RegexEditor = () => {
+const RegexEditor = (props: Props) => {
   const [state, setState] = useState<State>({
     regex: "",
     flags: [],
     editorState: EditorState.createEmpty(),
   });
+  const regexInput = useRef<HTMLInputElement>(null);
+
+  const { regexEditable, textEditable, hideCopyOptions, hideFlagOptions } =
+    props;
 
   useEffect(() => {
     const regex = "[A-Z]\\w+";
@@ -39,9 +43,8 @@ const RegexEditor = () => {
     });
 
     setCaretPosition(regexInput?.current, state.regex.length);
+    regexInput?.current?.focus();
   }, []);
-
-  const regexInput = useRef<HTMLInputElement>(null);
 
   const editor = useRef<any>(null);
 
@@ -137,14 +140,12 @@ const RegexEditor = () => {
         flags: [...state.flags, flag],
       });
     }
-
-    console.log("hererere", [...state.flags, flag]);
   };
 
   return (
     <div className={styles.wrapper}>
       <div className={`flex`}>
-        <div className={styles.textInputWrapper}>
+        <div className={`${styles.textInputWrapper} valign`}>
           <div>/</div>
           <input
             value={state.regex}
@@ -152,6 +153,7 @@ const RegexEditor = () => {
             onInput={handleRegexInput}
             className={styles.textInput}
             ref={regexInput}
+            disabled={!regexEditable}
           />
           <div>/</div>
           <div>
@@ -160,13 +162,20 @@ const RegexEditor = () => {
             ))}
           </div>
         </div>
-        <div
-          className={`${styles.copyWrapper} absolute-center`}
-          onClick={handleCopyToClipboard}
-        >
-          <Image src={copyIcon} alt="copy" height={16} />
-        </div>
-        <Flags flags={state.flags} handleFlagSelection={handleFlagSelection} />
+        {!hideCopyOptions && (
+          <div
+            className={`${styles.copyWrapper} absolute-center`}
+            onClick={handleCopyToClipboard}
+          >
+            <Image src={copyIcon} alt="copy" height={16} />
+          </div>
+        )}
+        {!hideFlagOptions && (
+          <Flags
+            flags={state.flags}
+            handleFlagSelection={handleFlagSelection}
+          />
+        )}
       </div>
 
       <div
@@ -177,6 +186,7 @@ const RegexEditor = () => {
           ref={editor}
           editorState={state.editorState}
           onChange={onChangeContent}
+          readOnly={!textEditable}
         />
       </div>
     </div>
@@ -187,6 +197,15 @@ type State = {
   regex: string;
   flags: string[];
   editorState: EditorState;
+};
+
+type Props = {
+  hideFlagOptions?: boolean;
+  hideCopyOptions?: boolean;
+  prefilRegex?: string;
+  prefilText?: string;
+  textEditable: boolean;
+  regexEditable: boolean;
 };
 
 export default RegexEditor;

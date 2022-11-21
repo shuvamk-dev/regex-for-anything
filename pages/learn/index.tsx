@@ -54,8 +54,7 @@ const Learn = () => {
         </div>
         <div className={`${styles.progressWrapper} fs-14`}>
           <div className={``}>
-            <div>Questions Completed:</div>
-            <div>10/36</div>
+            <div>Quest Progress</div>
           </div>
           <progress id="file" value="32" max="100" />
         </div>
