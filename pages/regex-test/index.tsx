@@ -7,7 +7,7 @@ const RegexTest = () => {
   const getLeftContent = () => {
     return (
       <div className={`${styles.wrapper}`}>
-        <RegexEditor />
+        <RegexEditor textEditable={true} regexEditable={true} />
       </div>
     );
   };
