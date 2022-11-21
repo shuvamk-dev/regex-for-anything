@@ -1,8 +1,5 @@
-import Lottie from "lottie-react";
-import Link from "next/link";
 import React, { useState } from "react";
 import { LESSONS } from "../../common/constants/learn";
-import Button from "../../components/Button";
 import BasicMatchers from "../../components/Learn/BasicMatchers";
 import CharacterSets from "../../components/Learn/CharacterSets";
 import Intro from "../../components/Learn/Intro";
@@ -34,54 +31,8 @@ const Learn = () => {
     }
   };
 
-  const showNextLesson = () => {
-    setCurrentLesson(currentLesson + 1);
-  };
-
-  const showPreviousLesson = () => {
-    setCurrentLesson(currentLesson - 1);
-  };
-
   const getLeftContent = () => {
-    return (
-      <div className={styles.wrapper}>
-        <div className={styles.innerContent}>
-          <div className={styles.headingWrapper}>
-            <div className={styles.lessonHeading}>
-              Lesson {currentLesson}: {LESSONS[currentLesson - 1]?.heading}
-            </div>
-          </div>
-
-          <div className={styles.lessonWrapper}>
-            <div className={styles.lessonContent}>{getCurrentLesson()}</div>
-          </div>
-          <div className={styles.buttonWrapper}>
-            <div
-              className={`${
-                currentLesson === 1 ? styles.hidden : styles.visible
-              }`}
-            >
-              <Button
-                btnText={`Prev: ${LESSONS[currentLesson - 2]?.heading}`}
-                onClick={showPreviousLesson}
-              />
-            </div>
-            {currentLesson === LESSONS.length ? (
-              <div>
-                <Button btnText={`Star on Github`} onClick={showNextLesson} />
-              </div>
-            ) : (
-              <div>
-                <Button
-                  btnText={`Next: ${LESSONS[currentLesson]?.heading}`}
-                  onClick={showNextLesson}
-                />
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    );
+    return getCurrentLesson();
   };
 
   const getRightContent = () => {
