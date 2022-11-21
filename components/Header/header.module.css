@@ -6,7 +6,17 @@
   background-color: white;
 }
 
+.homeTab {
+  transform: scale(1.25);
+}
+
 .menuItem {
   margin-right: 16px;
   cursor: pointer;
+  padding: 4px 0px;
+}
+
+.activeTab {
+  /* border-bottom: 2px solid var(--purple-2); */
+  transform: scale(1.25);
 }

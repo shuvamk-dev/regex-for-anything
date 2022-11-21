@@ -6,12 +6,16 @@ import Link from "next/link";
 const MenuItem = (props: Props) => {
   const {
     item: { icon, label, to },
+    isActive,
   } = props;
 
-  console.log(props.item);
   return (
     <Link href={to}>
-      <div className={`valign  ${styles.menuItem}`}>
+      <div
+        className={`valign  ${styles.menuItem} ${
+          isActive ? styles.activeTab : ""
+        }`}
+      >
         <Image src={icon} alt={label} />
         <span className={`only-mobile`}>{label}</span>
       </div>
@@ -21,6 +25,7 @@ const MenuItem = (props: Props) => {
 
 type Props = {
   item: any;
+  isActive: boolean;
 };
 
 export default MenuItem;

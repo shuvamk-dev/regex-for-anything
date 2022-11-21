@@ -1,5 +1,6 @@
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import {
   cheatsheetIcon,
   learnIcon,
@@ -32,17 +33,45 @@ const MENU_ITEMS = [
 ];
 
 const Header = () => {
-  console.log(learnIcon);
+  const [activeTab, setActiveTab] = useState("");
+  const router = useRouter();
+  const { pathname } = router;
+
+  useEffect(() => {
+    getActiveTab(pathname);
+  }, [pathname]);
+
+  const getActiveTab = (pathname: string) => {
+    switch (pathname) {
+      case "/":
+        return setActiveTab("Home");
+      case "/learn":
+        return setActiveTab("Learn");
+      case "/regex-test":
+        return setActiveTab("Test");
+      case "/cheatsheet":
+        return setActiveTab("Cheatsheet");
+    }
+  };
+
   return (
     <div className={`${styles.wrapper}`}>
       <div className={`max-width valign flex-between`}>
         <Link href="/">
-          <div className={`fs-24`}>RegEx.</div>
+          <div
+            className={`fs-24 ${activeTab === "Home" ? styles.homeTab : ""}`}
+          >
+            RegEx.
+          </div>
         </Link>
         <div className={`valign`}>
           <div className={`valign`}>
             {MENU_ITEMS.map((_item) => (
-              <MenuItem item={_item} key={_item.id} />
+              <MenuItem
+                item={_item}
+                key={_item.id}
+                isActive={activeTab === _item.label}
+              />
             ))}
           </div>
           <Button
