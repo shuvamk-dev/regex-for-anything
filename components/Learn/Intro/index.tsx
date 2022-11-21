@@ -1,49 +1,43 @@
 import Lottie from "lottie-react";
-import Image from "next/image";
 import React from "react";
-import { Lesson1Lottie } from "../../../assets/lottie/lottie";
-import Button from "../../Button";
-import styles from "./intro.module.css";
+import { IntroWarrior } from "../../../assets/lottie/lottie";
+import RegexEditor from "../../RegexEditor";
+import styles from "./introduction.module.css";
 
-const Intro = () => {
+const Introduction = () => {
   return (
-    <div className={styles.intro}>
-      <div className={styles.introItem}>
-        <div>
+    <div>
+      <div className="flex-between valign">
+        <div className={styles.lottie}>
           <Lottie
-            animationData={Lesson1Lottie}
-            style={{ height: "160px", width: "160px" }}
-            loop={true}
+            animationData={IntroWarrior}
+            loop
+            style={{ height: "200px", width: "240px" }}
           />
         </div>
-
-        <div className={styles.introText}>
-          A regular expression is a pattern that is matched against a subject
-          string from left to right. Regular expressions are used to replace
-          text within a string, validate forms, extract a substring from a
-          string based on a pattern match, and so much more. The term
-          &quot;regular expression&quot; is a mouthful, so you will usually find
-          the term abbreviated to &quot;regex&quot; or &quot;regexp&quot;.
+        <div className={`content`}>
+          You can be a “String Ninja”, that sounds cool, right? You’ll learn and
+          master RegEx or Regular Expressions in this series of lessons. You’ll
+          learn all the basics from matches, and sets to different flags that
+          you can use in the RegEx. While learning about these, you’ll get to
+          practice them in our own Regex Editor.
         </div>
       </div>
-
-      <div className={styles.exampleWrapper}>
-        <div>
-          Imagine you are writing an application and you want to set the rules
-          for when a user chooses their username. We want to allow the username
-          to contain letters, numbers, underscores and hyphens. We also want to
-          limit the number of characters in the username so it does not look
-          ugly. We can use the following regular expression to validate the
-          username:
+      <div className={`content content-gap`}>
+        Let’s go on a quest, in order to become the “String Ninja” you’ll face
+        numerous hurdles that you’ll have to solve with the only weapon that you
+        have, “REGEX”. Don’t worry it’s quite powerful.
+      </div>
+      <div className="challenge-wrapper">
+        <div className="challenge-question">
+          Enter Begin in this editor to start your quest.
         </div>
-        <Image
-          src={require("../images/example1.png")}
-          alt="Example 1"
-          className={styles.exampleImage}
-        />
+        <div>
+          <RegexEditor />
+        </div>
       </div>
     </div>
   );
 };
 
-export default Intro;
+export default Introduction;

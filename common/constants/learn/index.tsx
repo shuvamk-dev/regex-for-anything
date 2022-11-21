@@ -1,6 +1,7 @@
 export const LESSONS = [
   {
-    heading: "Introduction",
+    lesson: "Introduction",
+    heading: "String Ninja Quest",
   },
   {
     heading: "Basic 101",

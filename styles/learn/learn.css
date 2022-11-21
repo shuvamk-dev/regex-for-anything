@@ -1,0 +1,19 @@
+.content {
+  font-size: 20px;
+}
+
+.content-gap {
+  margin: 24px 0px;
+}
+
+.challenge-wrapper {
+  background-color: var(--purple-0-5);
+  margin: 48px 0px 24px 0px;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.challenge-question {
+  font-size: 18px;
+  font-weight: 600;
+}
