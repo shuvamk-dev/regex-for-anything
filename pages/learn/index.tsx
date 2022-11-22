@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { LESSONS } from "../../common/constants/learn";
 import BasicMatchers from "../../components/Learn/BasicMatchers";
 import CharacterSets from "../../components/Learn/CharacterSets";
@@ -8,12 +9,16 @@ import Repetitions from "../../components/Learn/Repetitions";
 import TheFullStop from "../../components/Learn/TheFullStop";
 import TwoColLayout from "../../components/TwoColLayout";
 import { LESSON_HEADINGS } from "../../data/lessons";
+import { useAppSelector } from "../../redux/hooks";
 
 import styles from "./learn.module.css";
 
 const Learn = () => {
   const [currentLesson, setCurrentLesson] = useState<number>(1);
 
+  const lessons = useAppSelector((state) => state.Lessons.lessonsData);
+
+  console.log(lessons);
   const getCurrentLesson = () => {
     switch (currentLesson) {
       case 1:

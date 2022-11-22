@@ -3,3 +3,14 @@ export type RegexQuery = {
   query: string;
   regex: string;
 };
+
+export type Section = {
+  title: string;
+  content: JSX.Element;
+};
+
+export type Lesson = {
+  isCompleted: boolean;
+  heading: string;
+  sections: Section[];
+};

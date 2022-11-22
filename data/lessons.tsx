@@ -1,3 +1,6 @@
+import { Lesson } from "../utils/types";
+import Introduction from "../components/Learn/Intro";
+
 export const LESSON_HEADINGS = [
   "Introduction",
   "Basic 101",
@@ -5,4 +8,17 @@ export const LESSON_HEADINGS = [
   "Lookarounds",
   "All about Flags",
   "Greedy & Lazy",
+];
+
+export const LESSONS_DATA: Lesson[] = [
+  {
+    isCompleted: false,
+    heading: "Introduction",
+    sections: [
+      {
+        title: "Introduction",
+        content: <Introduction />,
+      },
+    ],
+  },
 ];
