@@ -4,7 +4,10 @@ import Button from "../../components/Button";
 import TwoColLayout from "../../components/TwoColLayout";
 import { LESSON_HEADINGS } from "../../data/lessons";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { markLessonAsComplete } from "../../redux/slices/learn";
+import {
+  markLessonAsComplete,
+  markLessonAsIncomplete,
+} from "../../redux/slices/learn";
 import { Lesson } from "../../utils/types";
 
 import styles from "./learn.module.css";
@@ -28,6 +31,10 @@ const Learn = () => {
     dispatch(markLessonAsComplete(currentLesson!));
   };
 
+  const markLessonIncomplete = () => {
+    dispatch(markLessonAsIncomplete(currentLesson!));
+  };
+
   const getLeftContent = () => {
     return (
       <>
@@ -49,7 +56,11 @@ const Learn = () => {
             />
           )}
           {currentLesson?.prevHeading && (
-            <Button type="SECONDARY" btnText={currentLesson?.prevHeading} />
+            <Button
+              type="SECONDARY"
+              btnText={currentLesson?.prevHeading}
+              onClick={markLessonIncomplete}
+            />
           )}
         </div>
       </>

@@ -24,10 +24,18 @@ export const lessonsSlice = createSlice({
         }
       });
     },
+    markLessonAsIncomplete: (state, action: PayloadAction<Lesson>) => {
+      state.lessonsData.forEach((lesson) => {
+        if (lesson.heading === action.payload.prevHeading) {
+          lesson.isCompleted = false;
+        }
+      });
+    },
   },
 });
 
-export const { markLessonAsComplete } = lessonsSlice.actions;
+export const { markLessonAsComplete, markLessonAsIncomplete } =
+  lessonsSlice.actions;
 
 export const lessonsData = (state: RootState) => state.Lessons.lessonsData;
 
