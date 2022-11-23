@@ -1,15 +1,21 @@
 .button {
-  width: 100%;
+  width: max-content;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
   padding: 8px 16px;
+  font-size: 18px;
 }
 
 .primaryBtn {
   background-color: var(--purple-1);
+  border: 1px solid var(--purple-6);
+  color: var(--purple-6);
+}
+
+.secondaryBtn {
   border: 1px solid var(--purple-6);
   color: var(--purple-6);
 }

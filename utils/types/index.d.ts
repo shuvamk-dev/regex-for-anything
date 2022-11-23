@@ -12,5 +12,7 @@ export type Section = {
 export type Lesson = {
   isCompleted: boolean;
   heading: string;
+  nextHeading?: string;
+  prevHeading?: string;
   sections: Section[];
 };

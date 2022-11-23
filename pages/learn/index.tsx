@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Button from "../../components/Button";
+
 import TwoColLayout from "../../components/TwoColLayout";
 import { LESSON_HEADINGS } from "../../data/lessons";
 import { useAppSelector } from "../../redux/hooks";
@@ -21,12 +23,27 @@ const Learn = () => {
   };
 
   const getLeftContent = () => {
-    return currentLesson?.sections.map((section) => (
-      <div key={section.title} className={styles.sectionWrapper}>
-        <div className={`${styles.sectionHeading} fs-40`}>{section.title}</div>
-        {section.content}
-      </div>
-    ));
+    return (
+      <>
+        {currentLesson?.sections.map((section) => (
+          <div key={section.title} className={styles.sectionWrapper}>
+            <div className={`${styles.sectionHeading} fs-40`}>
+              {section.title}
+            </div>
+            {section.content}
+          </div>
+        ))}
+
+        <div className={styles.btnWrapper}>
+          {currentLesson?.nextHeading && (
+            <Button type="PRIMARY" btnText={currentLesson?.nextHeading} />
+          )}
+          {currentLesson?.prevHeading && (
+            <Button type="SECONDARY" btnText={currentLesson?.prevHeading} />
+          )}
+        </div>
+      </>
+    );
   };
 
   const getRightContent = () => {

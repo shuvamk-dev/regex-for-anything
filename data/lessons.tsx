@@ -14,6 +14,8 @@ export const LESSONS_DATA: Lesson[] = [
   {
     isCompleted: false,
     heading: "Introduction",
+    nextHeading: "Basic Matchers",
+    prevHeading: "kchj",
     sections: [
       {
         title: "Introduction",
