@@ -8,6 +8,18 @@
   align-items: flex-end;
 }
 
+.sectionWrapper {
+  position: relative;
+}
+
+.sectionHeading {
+  position: sticky;
+  top: 70px;
+  padding: 24px 0px;
+  background-color: white;
+  z-index: 98;
+}
+
 .lessonName {
   margin: 16px 0px;
   color: var(--purple-2);

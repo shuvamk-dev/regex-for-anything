@@ -1,43 +1,32 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { LESSONS } from "../../common/constants/learn";
-import BasicMatchers from "../../components/Learn/BasicMatchers";
-import CharacterSets from "../../components/Learn/CharacterSets";
-import Intro from "../../components/Learn/Intro";
-import MetaCharacters from "../../components/Learn/MetaCharacters";
-import Repetitions from "../../components/Learn/Repetitions";
-import TheFullStop from "../../components/Learn/TheFullStop";
+import React, { useEffect, useState } from "react";
 import TwoColLayout from "../../components/TwoColLayout";
 import { LESSON_HEADINGS } from "../../data/lessons";
 import { useAppSelector } from "../../redux/hooks";
+import { Lesson } from "../../utils/types";
 
 import styles from "./learn.module.css";
 
 const Learn = () => {
-  const [currentLesson, setCurrentLesson] = useState<number>(1);
+  const [currentLesson, setCurrentLesson] = useState<Lesson>();
 
   const lessons = useAppSelector((state) => state.Lessons.lessonsData);
 
-  console.log(lessons);
-  const getCurrentLesson = () => {
-    switch (currentLesson) {
-      case 1:
-        return <Intro />;
-      case 2:
-        return <BasicMatchers />;
-      case 3:
-        return <MetaCharacters />;
-      case 4:
-        return <TheFullStop />;
-      case 5:
-        return <CharacterSets />;
-      case 6:
-        return <Repetitions />;
-    }
+  useEffect(() => {
+    getCurrentLesson(lessons);
+  }, [lessons]);
+
+  const getCurrentLesson = (lessons: Lesson[]) => {
+    const lesson = lessons.filter((lesson) => lesson.isCompleted !== true);
+    setCurrentLesson(lesson[0]);
   };
 
   const getLeftContent = () => {
-    return getCurrentLesson();
+    return currentLesson?.sections.map((section) => (
+      <div key={section.title} className={styles.sectionWrapper}>
+        <div className={`${styles.sectionHeading} fs-40`}>{section.title}</div>
+        {section.content}
+      </div>
+    ));
   };
 
   const getRightContent = () => {
@@ -45,14 +34,7 @@ const Learn = () => {
       <div className={styles.rightWrapper}>
         <div>
           {LESSON_HEADINGS.map((lesson) => (
-            <div
-              key={lesson}
-              className={`${
-                lesson === LESSONS[currentLesson - 1].heading
-                  ? styles.activeLesson
-                  : styles.lessonName
-              }`}
-            >
+            <div key={lesson} className={`${styles.lessonName}`}>
               {lesson}
             </div>
           ))}
