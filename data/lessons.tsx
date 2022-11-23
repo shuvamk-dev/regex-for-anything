@@ -1,5 +1,6 @@
 import { Lesson } from "../utils/types";
 import Introduction from "../components/Learn/Intro";
+import BasicMatchers from "../components/Learn/BasicMatchers";
 
 export const LESSON_HEADINGS = [
   "Introduction",
@@ -19,6 +20,18 @@ export const LESSONS_DATA: Lesson[] = [
       {
         title: "Introduction",
         content: <Introduction />,
+      },
+    ],
+  },
+  {
+    isCompleted: false,
+    heading: "Basic Matchers",
+    prevHeading: "Introduction",
+    nextHeading: "Meta Characters",
+    sections: [
+      {
+        title: "Basic Matchers",
+        content: <BasicMatchers />,
       },
     ],
   },

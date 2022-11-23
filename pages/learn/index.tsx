@@ -3,7 +3,8 @@ import Button from "../../components/Button";
 
 import TwoColLayout from "../../components/TwoColLayout";
 import { LESSON_HEADINGS } from "../../data/lessons";
-import { useAppSelector } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { markLessonAsComplete } from "../../redux/slices/learn";
 import { Lesson } from "../../utils/types";
 
 import styles from "./learn.module.css";
@@ -12,6 +13,7 @@ const Learn = () => {
   const [currentLesson, setCurrentLesson] = useState<Lesson>();
 
   const lessons = useAppSelector((state) => state.Lessons.lessonsData);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     getCurrentLesson(lessons);
@@ -20,6 +22,10 @@ const Learn = () => {
   const getCurrentLesson = (lessons: Lesson[]) => {
     const lesson = lessons.filter((lesson) => lesson.isCompleted !== true);
     setCurrentLesson(lesson[0]);
+  };
+
+  const markLessonComplete = () => {
+    dispatch(markLessonAsComplete(currentLesson!));
   };
 
   const getLeftContent = () => {
@@ -36,7 +42,11 @@ const Learn = () => {
 
         <div className={styles.btnWrapper}>
           {currentLesson?.nextHeading && (
-            <Button type="PRIMARY" btnText={currentLesson?.nextHeading} />
+            <Button
+              type="PRIMARY"
+              btnText={currentLesson?.nextHeading}
+              onClick={markLessonComplete}
+            />
           )}
           {currentLesson?.prevHeading && (
             <Button type="SECONDARY" btnText={currentLesson?.prevHeading} />
