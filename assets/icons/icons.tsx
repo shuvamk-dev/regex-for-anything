@@ -6,6 +6,8 @@ import copyIcon from "./copy.svg";
 import flagIcon from "./flag.svg";
 import selectedOptionIcon from "./selected-option.svg";
 import notSelectedOptionIcon from "./not-selected-option.svg";
+import nextIcon from "./next-icon.svg";
+import prevIcon from "./prev-icon.svg";
 
 export {
   cheatsheetIcon,
@@ -16,4 +18,6 @@ export {
   flagIcon,
   selectedOptionIcon,
   notSelectedOptionIcon,
+  nextIcon,
+  prevIcon,
 };

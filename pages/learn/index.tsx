@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { nextIcon, prevIcon } from "../../assets/icons/icons";
 import Button from "../../components/Button";
 
 import TwoColLayout from "../../components/TwoColLayout";
@@ -53,6 +54,8 @@ const Learn = () => {
               type="PRIMARY"
               btnText={currentLesson?.nextHeading}
               onClick={markLessonComplete}
+              iconPathRight={nextIcon}
+              iconSize={18}
             />
           )}
           {currentLesson?.prevHeading && (
@@ -60,6 +63,8 @@ const Learn = () => {
               type="SECONDARY"
               btnText={currentLesson?.prevHeading}
               onClick={markLessonIncomplete}
+              iconSize={18}
+              iconPathLeft={prevIcon}
             />
           )}
         </div>

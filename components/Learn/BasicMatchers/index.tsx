@@ -9,15 +9,22 @@ const BasicMatchers = () => {
       <div className={`content`}>
         Have you ever used Ctrl + F or Cmd + F and searched for something in a
         doc or some text? You can do literally the same with RegEx. If there’s a
-        string “I like Pokemon” and you want to search for any occurrence of
-        “Poke” in this text then you just have to write Poke and with Regex,
-        you’ll be able to find one or all such occurrences.
+        string <span className="emphasis">I like Pokemon</span> and you want to
+        search for any occurrence of <span className="emphasis">Poke</span> in
+        this text then you just have to write{" "}
+        <span className="emphasis">Poke</span> and with Regex, you’ll be able to
+        find one or all such occurrences.
       </div>
 
       <div className={`content content-gap`}>
-        Keep in mind that RegEx is case sensitive by default so for “I like
-        Pokemon” poke will not give any result whereas Poke will match with “I
-        like Pokemon”.
+        Keep in mind that RegEx is case sensitive by default so for{" "}
+        <span className="emphasis">I like Pokemon</span> string,{" "}
+        <span className="emphasis">poke</span> will not give any result whereas{" "}
+        <span className="emphasis">Poke</span> will match with{" "}
+        <span className="emphasis">
+          I like <span className="match">Poke</span>mon
+        </span>
+        .
       </div>
       <div className="challenge-wrapper">
         <div className="valign">

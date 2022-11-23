@@ -17,3 +17,16 @@
   font-size: 18px;
   font-weight: 600;
 }
+
+.emphasis {
+  background-color: var(--purple-1);
+  font-size: 16px;
+  padding: 1px 6px;
+  border-radius: 6px;
+  font-weight: 300;
+}
+
+.match {
+  font-weight: 600;
+  color: var(--purple-6);
+}

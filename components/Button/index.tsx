@@ -10,9 +10,9 @@ const Button = (props: any) => {
   const getClassName = () => {
     switch (type) {
       case "PRIMARY":
-        return `${styles.primaryBtn} ${styles.button} `;
+        return `${styles.primaryBtn} ${styles.button} valign`;
       case "SECONDARY":
-        return `${styles.secondaryBtn} ${styles.button}`;
+        return `${styles.secondaryBtn} ${styles.button} valign`;
     }
   };
 
@@ -27,7 +27,14 @@ const Button = (props: any) => {
         />
       )}
       <div className={styles.btnText}>{btnText}</div>
-      {iconPathRight && <Image src={iconPathRight} alt={btnText} />}
+      {iconPathRight && (
+        <Image
+          src={iconPathRight}
+          alt={btnText}
+          height={iconSize}
+          width={iconSize}
+        />
+      )}
     </div>
   );
 };
