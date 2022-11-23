@@ -37,9 +37,9 @@ const Learn = () => {
 
   const getLeftContent = () => {
     return (
-      <>
+      <div className={styles.leftWrapper}>
         {currentLesson?.sections.map((section) => (
-          <div key={section.title} className={styles.sectionWrapper}>
+          <div className={styles.sectionWrapper} key={section.title}>
             <div className={`${styles.sectionHeading} fs-40`}>
               {section.title}
             </div>
@@ -63,7 +63,7 @@ const Learn = () => {
             />
           )}
         </div>
-      </>
+      </div>
     );
   };
 

@@ -8,16 +8,37 @@
   align-items: flex-end;
 }
 
-.sectionWrapper {
+.leftWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: space-between;
   position: relative;
 }
 
-.sectionHeading {
-  position: sticky;
-  top: 70px;
-  padding: 24px 0px;
+.sectionWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding: 16px 0px;
+  bottom: 0;
   background-color: white;
   z-index: 98;
+  position: sticky;
+}
+
+.sectionHeading {
+  padding: 16px 0px;
+  background-color: white;
+  z-index: 98;
+  position: sticky;
+  top: 70px;
 }
 
 .lessonName {
@@ -39,11 +60,4 @@
   width: max-content;
   border-radius: 10px;
   padding: 12px;
-}
-
-.btnWrapper {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row-reverse;
-  margin: 24px 0px;
 }
