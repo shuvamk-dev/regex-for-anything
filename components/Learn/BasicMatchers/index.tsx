@@ -1,50 +1,45 @@
 import Lottie from "lottie-react";
 import React from "react";
-import { Lesson2Lottie } from "../../../assets/lottie/lottie";
-
-import styles from "./basicMatchers.module.css";
+import { IntroWarrior } from "../../../assets/lottie/lottie";
+import RegexEditor from "../../RegexEditor";
 
 const BasicMatchers = () => {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.contentSection}>
-        <div>
-          A regular expression is just a pattern of characters that we use to
-          perform a search in a text. For example, the regular expression{" "}
-          <span className={styles.emphasis}>the</span> means: the letter{" "}
-          <span className={styles.emphasis}>t</span>, followed by the letter{" "}
-          <span className={styles.emphasis}>h</span>, followed by the letter{" "}
-          <span className={styles.emphasis}>e</span>.
-        </div>
-        <div className={styles.example}>
-          &quot;the&quot; =&gt; The fat cat sat on{" "}
-          <span className={styles.match}>the</span> mat.
-        </div>
-        <div>Test the regular expression</div>
+    <div>
+      <div className={`content`}>
+        Have you ever used Ctrl + F or Cmd + F and searched for something in a
+        doc or some text? You can do literally the same with RegEx. If there’s a
+        string “I like Pokemon” and you want to search for any occurrence of
+        “Poke” in this text then you just have to write Poke and with Regex,
+        you’ll be able to find one or all such occurrences.
       </div>
-      <div className={styles.contentSection}>
-        <div>
-          The regular expression <span className={styles.emphasis}>123</span>{" "}
-          matches the string <span className={styles.emphasis}>123</span>. The
-          regular expression is matched against an input string by comparing
-          each character in the regular expression to each character in the
-          input string, one after another. Regular expressions are normally
-          case-sensitive so the regular expression{" "}
-          <span className={styles.emphasis}>The</span> would not match{" "}
-          <span className={styles.emphasis}>the</span> string the.
-        </div>
-        <div className={styles.example}>
-          &quot;The&quot; =&gt; <span className={styles.match}>The</span> fat
-          cat sat on the mat.
-        </div>
-        <div>Test the regular expression</div>
+
+      <div className={`content content-gap`}>
+        Keep in mind that RegEx is case sensitive by default so for “I like
+        Pokemon” poke will not give any result whereas Poke will match with “I
+        like Pokemon”.
       </div>
-      <div className={styles.lottie}>
-        <Lottie
-          animationData={Lesson2Lottie}
-          loop={true}
-          style={{ height: "240px", width: "240px" }}
-        />
+      <div className="challenge-wrapper">
+        <div className="valign">
+          <Lottie
+            animationData={IntroWarrior}
+            loop
+            style={{ width: "240px" }}
+          />
+          <div className="challenge-question">
+            In the first challenge, you found a crate and there’s a scroll with
+            a message, you have to find the key in it. Use your Regex editor and
+            you’ll be good to go.
+          </div>
+        </div>
+        <div>
+          <RegexEditor
+            textEditable={false}
+            regexEditable={true}
+            hideCopyOptions={true}
+            hideFlagOptions={true}
+          />
+        </div>
       </div>
     </div>
   );
