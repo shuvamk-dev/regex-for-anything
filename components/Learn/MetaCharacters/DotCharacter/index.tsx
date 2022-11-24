@@ -1,6 +1,6 @@
-import Lottie from "lottie-react";
 import React from "react";
-import { keyLottie } from "../../../../assets/lottie/lottie";
+import Lottie from "lottie-react";
+import { potionLottie } from "../../../../assets/lottie/lottie";
 import RegexEditor from "../../../RegexEditor";
 
 const DotCharacter = () => {
@@ -21,7 +21,11 @@ const DotCharacter = () => {
       </div>
       <div className="challenge-wrapper">
         <div className="valign">
-          <Lottie animationData={keyLottie} loop style={{ width: "240px" }} />
+          <Lottie
+            animationData={potionLottie}
+            loop
+            style={{ width: "240px" }}
+          />
           <div className="challenge-question">
             In your quest to become “String Ninja” you found an old crate with
             tons of potions which might be handy in future, just grab each and

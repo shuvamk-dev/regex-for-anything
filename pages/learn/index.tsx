@@ -22,6 +22,9 @@ const Learn = () => {
 
   useEffect(() => {
     getCurrentLesson(lessons);
+    setTimeout(() => {
+      scrollTop();
+    }, 1);
   }, [lessons]);
 
   const getCurrentLesson = (lessons: Lesson[]) => {

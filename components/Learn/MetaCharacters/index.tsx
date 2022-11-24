@@ -1,13 +1,7 @@
-import React, { useEffect } from "react";
-import { scrollTop } from "../../../utils/funcs";
+import React from "react";
 import RegexEditor from "../../RegexEditor";
 
 const MetaCharcters = () => {
-  useEffect(() => {
-    setTimeout(() => {
-      scrollTop();
-    }, 1);
-  }, []);
   return (
     <div>
       <div className={`content`}>

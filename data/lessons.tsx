@@ -3,6 +3,7 @@ import Introduction from "../components/Learn/Intro";
 import BasicMatchers from "../components/Learn/BasicMatchers";
 import MetaCharcters from "../components/Learn/MetaCharacters";
 import DotCharacter from "../components/Learn/MetaCharacters/DotCharacter";
+import CharacterSets from "../components/Learn/MetaCharacters/CharacterSets";
 
 export const LESSON_HEADINGS = [
   "Introduction",
@@ -52,7 +53,7 @@ export const LESSONS_DATA: Lesson[] = [
       },
       {
         title: "Character Sets []",
-        content: <BasicMatchers />,
+        content: <CharacterSets />,
       },
     ],
   },
