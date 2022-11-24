@@ -25,9 +25,9 @@ export const lessonsSlice = createSlice({
       });
     },
     markLessonAsIncomplete: (state, action: PayloadAction<Lesson>) => {
-      state.lessonsData.forEach((lesson) => {
+      state.lessonsData.forEach((lesson, index) => {
         if (lesson.id === action.payload.id) {
-          lesson.isCompleted = false;
+          state.lessonsData[index - 1].isCompleted = false;
         }
       });
     },
