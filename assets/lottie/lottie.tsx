@@ -1,8 +1,6 @@
 import IntroWarrior from "./intro_warrior.json";
 import keyLottie from "./key.json";
 import potionLottie from "./potion.json";
-
-import Lesson3Lottie from "./calm.json";
 import Lesson4Lottie from "./relax.json";
 import Lesson5Lottie from "./meditate.json";
 import Lesson6Lottie from "./meditation2.json";
