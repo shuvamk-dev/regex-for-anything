@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import React from "react";
-import { IntroWarrior } from "../../../assets/lottie/lottie";
+import { keyLottie } from "../../../assets/lottie/lottie";
 import RegexEditor from "../../RegexEditor";
 
 const BasicMatchers = () => {
@@ -28,11 +28,7 @@ const BasicMatchers = () => {
       </div>
       <div className="challenge-wrapper">
         <div className="valign">
-          <Lottie
-            animationData={IntroWarrior}
-            loop
-            style={{ width: "240px" }}
-          />
+          <Lottie animationData={keyLottie} loop style={{ width: "240px" }} />
           <div className="challenge-question">
             In the first challenge, you found a crate and there’s a scroll with
             a message, you have to find the key in it. Use your Regex editor and

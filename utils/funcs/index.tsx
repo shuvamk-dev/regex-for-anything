@@ -15,3 +15,8 @@ export const copyToClipboard = async (content: string) => {
     console.error("Failed to copy: ", err);
   }
 };
+
+export const scrollTop = () => {
+  console.log("HERR");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};

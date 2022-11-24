@@ -1,6 +1,8 @@
 import { Lesson } from "../utils/types";
 import Introduction from "../components/Learn/Intro";
 import BasicMatchers from "../components/Learn/BasicMatchers";
+import MetaCharcters from "../components/Learn/MetaCharacters";
+import DotCharacter from "../components/Learn/MetaCharacters/DotCharacter";
 
 export const LESSON_HEADINGS = [
   "Introduction",
@@ -31,6 +33,25 @@ export const LESSONS_DATA: Lesson[] = [
     sections: [
       {
         title: "Basic Matchers",
+        content: <BasicMatchers />,
+      },
+    ],
+  },
+  {
+    isCompleted: false,
+    heading: "Meta Characters",
+    prevHeading: "Basic Matchers",
+    sections: [
+      {
+        title: "Meta Characters",
+        content: <MetaCharcters />,
+      },
+      {
+        title: "Dot. Character",
+        content: <DotCharacter />,
+      },
+      {
+        title: "Character Sets []",
         content: <BasicMatchers />,
       },
     ],

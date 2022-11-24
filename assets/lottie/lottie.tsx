@@ -1,5 +1,6 @@
 import IntroWarrior from "./intro_warrior.json";
-import Lesson2Lottie from "./coding.json";
+import keyLottie from "./key.json";
+
 import Lesson3Lottie from "./calm.json";
 import Lesson4Lottie from "./relax.json";
 import Lesson5Lottie from "./meditate.json";
@@ -12,7 +13,7 @@ import Lesso11Lottie from "./cap.json";
 
 export {
   IntroWarrior,
-  Lesson2Lottie,
+  keyLottie,
   Lesson3Lottie,
   Lesson4Lottie,
   Lesson5Lottie,

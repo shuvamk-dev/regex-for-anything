@@ -9,6 +9,7 @@ import {
   markLessonAsComplete,
   markLessonAsIncomplete,
 } from "../../redux/slices/learn";
+import { scrollTop } from "../../utils/funcs";
 import { Lesson } from "../../utils/types";
 
 import styles from "./learn.module.css";
