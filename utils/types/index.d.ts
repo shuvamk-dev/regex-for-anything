@@ -15,4 +15,5 @@ export type Lesson = {
   nextHeading?: string;
   prevHeading?: string;
   sections: Section[];
+  id: number;
 };

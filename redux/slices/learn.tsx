@@ -19,14 +19,14 @@ export const lessonsSlice = createSlice({
   reducers: {
     markLessonAsComplete: (state, action: PayloadAction<Lesson>) => {
       state.lessonsData.forEach((lesson) => {
-        if (lesson.heading === action.payload.heading) {
+        if (lesson.id === action.payload.id) {
           lesson.isCompleted = true;
         }
       });
     },
     markLessonAsIncomplete: (state, action: PayloadAction<Lesson>) => {
       state.lessonsData.forEach((lesson) => {
-        if (lesson.heading === action.payload.prevHeading) {
+        if (lesson.id === action.payload.id) {
           lesson.isCompleted = false;
         }
       });

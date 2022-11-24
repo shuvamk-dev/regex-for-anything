@@ -16,6 +16,7 @@ export const LESSON_HEADINGS = [
 
 export const LESSONS_DATA: Lesson[] = [
   {
+    id: 1,
     isCompleted: false,
     heading: "Introduction",
     nextHeading: "Basic Matchers",
@@ -27,6 +28,7 @@ export const LESSONS_DATA: Lesson[] = [
     ],
   },
   {
+    id: 2,
     isCompleted: false,
     heading: "Basic Matchers",
     prevHeading: "Introduction",
@@ -39,8 +41,10 @@ export const LESSONS_DATA: Lesson[] = [
     ],
   },
   {
+    id: 3,
     isCompleted: false,
     heading: "Meta Characters",
+    nextHeading: "Character Sets",
     prevHeading: "Basic Matchers",
     sections: [
       {
@@ -51,6 +55,14 @@ export const LESSONS_DATA: Lesson[] = [
         title: "Dot. Character",
         content: <DotCharacter />,
       },
+    ],
+  },
+  {
+    id: 4,
+    isCompleted: false,
+    heading: "Meta Characters",
+    prevHeading: "Basic Matchers",
+    sections: [
       {
         title: "Character Sets []",
         content: <CharacterSets />,
