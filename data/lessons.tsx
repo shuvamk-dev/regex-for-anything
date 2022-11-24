@@ -67,6 +67,10 @@ export const LESSONS_DATA: Lesson[] = [
         title: "Character Sets []",
         content: <CharacterSets />,
       },
+      {
+        title: "Negated Character Sets",
+        content: <CharacterSets />,
+      },
     ],
   },
 ];
