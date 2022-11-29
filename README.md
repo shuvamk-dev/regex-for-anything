@@ -6,6 +6,7 @@ from basic to advanced while practising on the go.
 ## Preview
 
 ![App Screenshot]('./assets/screenshot/shot1.png)
+![App Screenshot]('./assets/screenshot/shot2.png)
 
 ## Authors
 
